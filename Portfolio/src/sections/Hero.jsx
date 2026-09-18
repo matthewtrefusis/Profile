@@ -3,7 +3,6 @@ export const Hero = () => {
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
-        <h1>Test</h1>
         <img
           src="/er_1.jpg"
           alt="Hero Image"
