@@ -1,6 +1,12 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { Mail } from "lucide-react";
 
 const contactLinks = [
+  {
+    label: "Email me",
+    href: "mailto:matthewtrefusis@sky.com",
+    icon: Mail,
+  },
   {
     label: "GitHub",
     href: "https://github.com/matthewtrefusis/",

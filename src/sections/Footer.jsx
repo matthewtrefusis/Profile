@@ -32,7 +32,7 @@ export const Footer = () => {
             Matthew Trefusis<span className="text-primary">.</span>
           </p>
           <p className="text-sm text-muted-foreground mt-1">
-            Building reliable software with intent.
+            Building fast software that lasts.
           </p>
         </div>
 
