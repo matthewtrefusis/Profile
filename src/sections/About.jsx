@@ -1,3 +1,4 @@
+import { ScrollButton } from "@/components/ScrollButton";
 import { Code2, Lightbulb, Rocket, Users } from "lucide-react";
 
 const highlights = [
@@ -11,7 +12,7 @@ const highlights = [
     icon: Rocket,
     title: "Performance",
     description:
-      "Optimizing applications for fast load times and seamless responsiveness.",
+      "Designing low-overhead software with fast execution and minimal resource bloat.",
   },
   {
     icon: Users,
@@ -23,7 +24,7 @@ const highlights = [
     icon: Lightbulb,
     title: "Innovation",
     description:
-      "Leveraging modern tools and industry best practices to build future-ready web tools.",
+      "Choosing the right runtime, language, and architecture for the problem—not just the latest trend.",
   },
 ];
 
@@ -51,18 +52,18 @@ export const About = () => {
             <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
               <p>
                 I'm a software engineer and Computer Science student at the
-                University of Reading with a passion for crafting fast, reliable
-                digital products. My journey began with a curiosity for how web
-                systems and software operate, evolving into hands-on experience
-                building full-stack applications with C#, Python, React, and
-                TypeScript
+                University of Reading focused on building fast, dependable
+                software. What started as curiosity about how software works
+                under the hood has grown into hands-on experience across backend
+                services, desktop applications, and tooling using C#, Rust,
+                Java, Python, and TypeScript.
               </p>
               <p>
-                I specialize in bridging backend logic with responsive
-                frontends—building everything from high-volume web applications
-                to practical IT tools. My approach combines technical rigor with
-                a focus on clean architecture, intuitive user interfaces, and
-                accessibility.
+                I enjoy solving hard backend and systems problems and packaging
+                them into clean, intuitive software—from low-latency services
+                and compiled WebAssembly modules to practical desktop tools. My
+                approach combines technical rigor with maintainable architecture
+                and responsive interfaces.
               </p>
               <p>
                 Outside of software engineering, you'll find me leading sessions
@@ -71,11 +72,11 @@ export const About = () => {
               </p>
             </div>
 
-            <div className="glass rounded-2xl p-6 glow-border animate-fade-in animation-delay-300">
+            <div className="glass card-border rounded-2xl p-6 glow-border animate-fade-in animation-delay-300">
               <p className="text-lg font-medium italic text-foreground">
-                "My mission is to create fast, accessible digital tools that
-                solve real problems — building interfaces users love and
-                codebases developers enjoy working in."
+                "My goal is to build fast, practical software that solves real
+                problems—with clean interfaces for users and maintainable
+                codebases for developers."
               </p>
             </div>
           </div>
@@ -85,7 +86,7 @@ export const About = () => {
             {highlights.map((item, idx) => (
               <div
                 key={idx}
-                className="glass p-6 rounded-2xl animate-fade-in"
+                className="glass card-border p-6 rounded-2xl animate-fade-in"
                 style={{ animationDelay: `${(idx + 1) * 100}ms` }}
               >
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 hover:bg-primary/20">
@@ -100,6 +101,7 @@ export const About = () => {
           </div>
         </div>
       </div>
+      <ScrollButton href="#experience" label="Experience" />
     </section>
   );
 };

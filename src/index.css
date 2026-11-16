@@ -29,8 +29,25 @@
 
   body {
     background-color: var(--color-background);
+    background-image:
+      linear-gradient(
+        to bottom,
+        rgba(11, 15, 20, 0.2),
+        rgba(11, 15, 20, 0.82) 70%,
+        rgba(11, 15, 20, 0.96)
+      ),
+      url("/Background_Photo.jpg");
+    background-position: center top;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     color: var(--color-foreground);
     font-family: "Inter", sans-serif;
+    overflow-anchor: none;
+  }
+
+  section {
+    scroll-margin-top: 5rem;
   }
 
   .font-serif {
@@ -41,13 +58,13 @@
 @layer components {
   .glass {
     background-color: color-mix(in srgb, var(--color-surface) 50%, transparent);
-    backdrop-filter: blur(16px);
+    backdrop-filter: blur(10px);
     border: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
   }
 
   .glass-strong {
     background-color: color-mix(in srgb, var(--color-surface) 80%, transparent);
-    backdrop-filter: blur(24px);
+    backdrop-filter: blur(14px);
     border: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
   }
 
@@ -57,9 +74,31 @@
   }
 
   .glow-border {
+    transition: box-shadow 300ms ease;
+  }
+
+  .glow-border:hover {
     box-shadow:
       0 0 20px color-mix(in srgb, var(--color-primary) 20%, transparent),
       inset 0 0 20px color-mix(in srgb, var(--color-primary) 5%, transparent);
+  }
+
+  .card-border {
+    border: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
+    transition:
+      border-color 300ms ease,
+      box-shadow 300ms ease;
+  }
+
+  .profile-image-frame {
+    filter: none;
+    backdrop-filter: none;
+  }
+
+  .profile-image {
+    filter: none !important;
+    opacity: 1;
+    transform: none;
   }
 }
 
@@ -124,6 +163,27 @@
     animation: marquee 30s linear infinite;
   }
 
+  .floating-dot {
+    contain: layout paint;
+  }
+
+  .technology-marquee {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 10%,
+      black 90%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 10%,
+      black 90%,
+      transparent
+    );
+  }
+
   .animation-delay-100 {
     animation-delay: 100ms;
   }
@@ -153,27 +213,73 @@
   }
 
   @keyframes animated-border {
-    0% {
-      stroke-dashoffset: 400;
+    from {
+      background-position:
+        0 0,
+        100% 0;
     }
-    100% {
-      stroke-dashoffset: -550;
+    to {
+      background-position:
+        0 0,
+        -100% 0;
     }
   }
 
-  .group:hover .animated-border-path {
-    animation: animated-border 1.5s linear infinite;
+  .animated-border {
+    border: 1px solid var(--color-border);
+    animation: none;
+    background: var(--color-background);
   }
 
   .animated-border:hover {
-    background-color: color-mix(in srgb, #26c4b8 15%, transparent);
-    backdrop-filter: blur(16px);
+    border-color: transparent;
+    background:
+      linear-gradient(var(--color-background), var(--color-background))
+        padding-box,
+      linear-gradient(
+          90deg,
+          var(--color-border),
+          var(--color-primary),
+          var(--color-border)
+        )
+        border-box;
+    background-size:
+      100% 100%,
+      200% 100%;
+    background-position:
+      0 0,
+      100% 0;
+    animation: animated-border 1.5s linear infinite;
     box-shadow: 0 0 20px color-mix(in srgb, #26c4b8 20%, transparent);
+  }
+
+  .card-border:hover {
+    border-color: color-mix(
+      in srgb,
+      var(--color-primary) 75%,
+      var(--color-border)
+    );
+    box-shadow: 0 0 24px color-mix(in srgb, var(--color-primary) 22%, transparent);
   }
 
   .timeline-glow {
     box-shadow:
       0 0 40px color-mix(in srgb, var(--color-primary) 35%, transparent),
       0 0 80px color-mix(in srgb, var(--color-primary) 25%, transparent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-dot,
+  .animate-fade-in,
+  .animate-float,
+  .animate-marquee {
+    animation: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
   }
 }
