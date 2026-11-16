@@ -102,13 +102,24 @@ export const Hero = () => {
           </p>
           <div className="technology-marquee relative overflow-hidden">
             <div className="flex animate-marquee">
-              {[...skills, ...skills].map((skill, idx) => (
-                <div key={idx} className="flex-shrink-0 px-8 py-4">
-                  <span className="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">
-                    {skill}
-                  </span>
-                </div>
-              ))}
+              <div className="flex">
+                {skills.map((skill) => (
+                  <div key={skill} className="flex-shrink-0 px-8 py-4">
+                    <span className="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">
+                      {skill}
+                    </span>
+                  </div>
+                ))}
+              </div>
+              <div className="flex" aria-hidden="true">
+                {skills.map((skill) => (
+                  <div key={skill} className="flex-shrink-0 px-8 py-4">
+                    <span className="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">
+                      {skill}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
           <ScrollButton href="#about" label="About" />

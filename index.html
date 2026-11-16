@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Portfolio of Matthew Trefusis, a software engineer and Computer Science student at the University of Reading building fast, dependable software for web, desktop, and edge environments."
+      content="Portfolio of Matthew Trefusis, a software engineer and University of Reading Computer Science student building fast web, desktop, and edge software."
     />
     <meta name="author" content="Matthew Trefusis" />
     <meta name="theme-color" content="#0b0b0f" />
@@ -46,34 +46,49 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Matthew Trefusis",
-        "url": "https://matthewtrefusis.com/",
-        "image": "https://matthewtrefusis.com/ProfilePicture-portrait.jpg",
-        "jobTitle": "Software Engineer",
-        "alumniOf": {
-          "@type": "CollegeOrUniversity",
-          "name": "University of Reading"
-        },
-        "knowsAbout": [
-          "C#",
-          ".NET",
-          "Rust",
-          "Java",
-          "Python",
-          "TypeScript",
-          "JavaScript",
-          "SQL",
-          "MongoDB",
-          "Node.js",
-          "React",
-          "Angular",
-          "Web development",
-          "Systems programming"
-        ],
-        "sameAs": [
-          "https://github.com/matthewtrefusis/",
-          "https://www.linkedin.com/in/matthew-trefusis/"
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://matthewtrefusis.com/#person",
+            "name": "Matthew Trefusis",
+            "url": "https://matthewtrefusis.com/",
+            "image": "https://matthewtrefusis.com/ProfilePicture-portrait.jpg",
+            "jobTitle": "Software Engineer",
+            "description": "Software engineer and Computer Science student at the University of Reading building fast, dependable software for web, desktop, and edge environments.",
+            "alumniOf": {
+              "@type": "CollegeOrUniversity",
+              "name": "University of Reading"
+            },
+            "knowsAbout": [
+              "C#",
+              ".NET",
+              "Rust",
+              "Java",
+              "Python",
+              "TypeScript",
+              "JavaScript",
+              "SQL",
+              "MongoDB",
+              "Node.js",
+              "React",
+              "Angular",
+              "Web development",
+              "Systems programming"
+            ],
+            "sameAs": [
+              "https://github.com/matthewtrefusis/",
+              "https://www.linkedin.com/in/matthew-trefusis/"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://matthewtrefusis.com/#website",
+            "url": "https://matthewtrefusis.com/",
+            "name": "Matthew Trefusis | Software Engineer",
+            "publisher": {
+              "@id": "https://matthewtrefusis.com/#person"
+            }
+          }
         ]
       }
     </script>
